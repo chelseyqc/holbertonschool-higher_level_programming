@@ -5,14 +5,14 @@
 class Square:
     """
     Represents a square.
-    
-    Attributes: 
+
+    Attributes:
     __size (int): the size of the square
     """
     def __init__(self, size=0):
         """
         initialises an instance of Square
-        
+
         Args:
         size (int, optional): the size of the square. Defaults to 0
         """
@@ -21,6 +21,7 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
+
     def area(self):
         """
         calculates the area of the square
