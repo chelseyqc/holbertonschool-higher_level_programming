@@ -1,0 +1,36 @@
+Module: "matrix_divided"
+========================
+
+Using: "matrix_divided"
+------------------------
+
+Import "matrix_divided" from "matrix_divided" module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now to use it:
+
+    Dividing valid matrix (list of lists) by an integer:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    Dividing a matrix (not list of list of int) by div:
+    >>> matrix =["not", "valid"]
+    >>> matrix_divided(matrix, 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix(list of lists) of integers/floats
+
+    Dividing a matrix where rows are not the same size:
+    >>> matrix = [[1, 2, 3], [4, 5]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+    Dividing a matrix where div is not an int:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, "not an int")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
