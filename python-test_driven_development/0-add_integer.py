@@ -12,8 +12,8 @@ def add_integer(a, b=98):
         a (int): an integer thats added with b
         b (int): the other integer thats added with a
 
-    Returns: 
-        int: the result of the sum of a and b 
+    Returns:
+        int: the result of the sum of a and b
     """
     if a is None or (type(a) is not int and type(a) is not float):
         raise TypeError("a must be an integer")
