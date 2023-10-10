@@ -21,6 +21,11 @@ def matrix_divided(matrix, div):
     for row in matrix:
         if not isinstance(row, list):
             raise TypeError(message)
+        
+        # within loop check if all elements in the row are int or float
+        for element in row:
+            if not isinstance(element, (int, float)):
+                raise TypeError(message)
 
     # check if all rows are of the same size
     if not all(len(row) == len(matrix[0]) for row in matrix):
