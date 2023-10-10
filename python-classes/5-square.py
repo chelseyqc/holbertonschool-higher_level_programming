@@ -5,7 +5,7 @@
 class Square:
     """
     Represents a square.
-    
+
     Attributes:
     size (int): the size of the square
     area (int): the area of the square
@@ -28,15 +28,15 @@ class Square:
             int: the size of the square
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
         Sets the size attribute
-        
+
         Args:
             value (int): the size of the square
-            
+
         Raises:
             TypeError: if the value is not an integer
             ValueError: if the value is less than 0
@@ -55,7 +55,7 @@ class Square:
             int: the area of the square
         """
         return self.__size ** 2
-    
+
     def my_print(self):
         """
         Prints the square in stdout with #
