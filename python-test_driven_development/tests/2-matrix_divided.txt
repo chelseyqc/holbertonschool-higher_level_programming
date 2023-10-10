@@ -38,3 +38,30 @@ Now to use it:
     Traceback (most recent call last):
     ...
     TypeError: div must be a number
+
+    Dividing a matrix by div = 0:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> div = 0
+    >>> matrix_divided(matrix, div)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+    Dividing a matrix by infinity:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> div = float('inf')
+    >>> matrix_divided(matrix, div)
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+    Missing an argument:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    No arguments:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
