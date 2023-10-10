@@ -16,8 +16,11 @@ def matrix_divided(matrix, div):
     # check if matrix is list of lists
     if not isinstance(matrix, list):
         raise TypeError(message)
-    elif not all(isinstance(row, list) for row in matrix):
-        raise TypeError(message)
+
+    # check if all elements in the matrix are lists
+    for row in matrix:
+        if not isinstance(row, list):
+            raise TypeError(message)
 
     # check if all rows are of the same size
     if not all(len(row) == len(matrix[0]) for row in matrix):
