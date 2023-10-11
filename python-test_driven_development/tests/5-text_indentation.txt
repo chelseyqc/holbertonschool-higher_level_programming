@@ -1,0 +1,20 @@
+Module: "text_indentation"
+==========================
+
+Using: "text_indentation"
+--------------------------
+
+Import "text_indentation" from the module "text_indentation"
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now to use it:
+
+    Printing a text when it's a str:
+    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    Printing a text when it's not a str:
+    >>> text_indentation(42918014892480921)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
