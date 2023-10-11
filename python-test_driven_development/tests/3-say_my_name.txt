@@ -27,7 +27,7 @@ Now to use it:
 
     Only one parameter:
     >>> say_my_name("John")
-    My name is John
+    My name is John 
 
     No parameters:
     >>> say_my_name()
