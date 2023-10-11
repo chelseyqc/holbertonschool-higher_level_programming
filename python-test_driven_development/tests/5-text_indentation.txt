@@ -10,8 +10,10 @@ Import "text_indentation" from the module "text_indentation"
 Now to use it:
 
     Printing a text when it's a str:
-    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    >>> text_indentation("Hello.Test")
+    Hello.
+    <BLANKLINE>
+    Test
 
     Printing a text when it's not a str:
     >>> text_indentation(42918014892480921)
@@ -24,4 +26,3 @@ Now to use it:
     Traceback (most recent call last):
     ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
-    
