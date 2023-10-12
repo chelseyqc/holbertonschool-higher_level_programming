@@ -27,6 +27,10 @@ class TestMaxInteger(unittest.TestCase):
         """List contains both integers and floats"""
         self.assertEqual(max_integer([1.5, 2, 3, 3.5]), 3.5)
 
+    def test_middle_max(self):
+        """List contains the max in the middle"""
+        self.assertEqual(max_integer([1, 3, 2]), 3)
+
 
 if __name__ == '__main__':
     unittest.main()
