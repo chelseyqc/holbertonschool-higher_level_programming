@@ -10,6 +10,9 @@ class Rectangle:
         width (int): private instance for the width of rectangle
         height (int): private instance for height of rectangle
     """
+    
+    __width = 0
+    __height = 0
 
     def __init__(self, width=0, height=0):
         """initialise an instance of rectangle"""
