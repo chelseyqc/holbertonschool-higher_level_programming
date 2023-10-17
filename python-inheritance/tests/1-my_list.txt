@@ -1,7 +1,7 @@
-Module: my_list
+Module: "my_list"
 ====================
 
-Using: print_sorted
+Using: "print_sorted"
 --------------------
 
 Import MyList from the my_list module:
@@ -9,7 +9,7 @@ Import MyList from the my_list module:
 
 Now to use it:
 
-    Sorting a list of integers:
+    Basic sort:
     >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.append(4)
@@ -18,6 +18,8 @@ Now to use it:
     >>> my_list.append(5)
     >>> my_list.print_sorted()
     [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
 
     Sorting a list that contains an element that is a str:
     >>> my_list = MyList()
@@ -31,9 +33,13 @@ Now to use it:
     ...
     TypeError: '<' not supported between instances of 'int' and 'str'
 
-    List contains nothing:
+    List is empty:
     >>> my_list = MyList()
+    >>> print(my_list)
+    []
     >>> my_list.print_sorted()
+    []
+    >>> print(my_list)
     []
 
     List contains only the same integer:
@@ -45,6 +51,8 @@ Now to use it:
     >>> my_list.append(1)
     >>> my_list.print_sorted()
     [1, 1, 1, 1, 1]
+    >>> print(my_list)
+    [1, 1, 1, 1, 1]
 
     List contains negative integers:
     >>> my_list = MyList()
@@ -55,11 +63,15 @@ Now to use it:
     >>> my_list.append(5)
     >>> my_list.print_sorted()
     [-3, 1, 2, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, -3, 5]
 
     There is only one:
     >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.print_sorted()
+    [1]
+    >>> print(my_list)
     [1]
 
     The list contains elements that are float:
@@ -70,3 +82,5 @@ Now to use it:
     >>> my_list.append(1.5)
     >>> my_list.print_sorted()
     [1, 1.5, 2.5, 4]
+    >>> print(my_list)
+    [1, 4, 2.5, 1.5]
