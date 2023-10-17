@@ -27,7 +27,7 @@ Now to use it:
     ...
     TypeError: age must be an integer
 
-    Value is less than or equal to 0:
+    Value is 0:
     >>> bg.integer_validator("age", 0)
     Traceback (most recent call last):
     ...
@@ -44,3 +44,22 @@ Now to use it:
     Traceback (most recent call last):
     ...
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    Value is negative:
+    >>> bg.integer_validator("age", -5)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+    Value is a list:
+    >>> bg.integer_validator("age", [5])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Value is None:
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+    
