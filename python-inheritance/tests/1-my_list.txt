@@ -9,7 +9,7 @@ Import MyList from the my_list module:
 
 Now to use it:
 
-    Sorting a list of integers
+    Sorting a list of integers:
     >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.append(4)
