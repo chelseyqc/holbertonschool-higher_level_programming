@@ -62,4 +62,21 @@ Now to use it:
     Traceback (most recent call last):
     ...
     TypeError: age must be an integer
-    
+
+    Value is a tuple:
+    >>> bg.integer_validator("age", (5,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Value is bool:
+    >>> bg.integer_validator("age", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Value is a set:
+    >>> bg.integer_validator("age", {5, 1})
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
