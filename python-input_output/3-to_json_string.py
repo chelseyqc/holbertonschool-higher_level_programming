@@ -12,7 +12,7 @@ def to_json_string(my_obj):
         my_obj (str): the object
 
     Returns:
-
+        JSON representation of an object
     """
     import json
     return json.dumps(my_obj)
