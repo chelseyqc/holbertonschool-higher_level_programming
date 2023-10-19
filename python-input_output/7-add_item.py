@@ -10,12 +10,13 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 filename = "add_item.json"
 
-if not os.path.exists(filename):
-    items = load_from_json_file(filename)
 
+
+if os.path.exists(filename):
+    items = load_from_json_file(filename)
 else:
     items = []
-
+    
 new_item = sys.argv[1:]
 for i in new_item:
     items.append(i)
