@@ -10,7 +10,7 @@ def to_json_string(my_obj):
 
     Args:
         my_obj (str): the object
-    
+
     Returns:
 
     """
