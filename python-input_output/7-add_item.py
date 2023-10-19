@@ -12,11 +12,11 @@ filename = "add_item.json"
 
 
 
-if os.path.exists(filename):
-    items = load_from_json_file(filename)
-else:
+if not os.path.exists(filename):
     items = []
-    
+else:
+    items = load_from_json_file(filename)
+
 new_item = sys.argv[1:]
 for i in new_item:
     items.append(i)
