@@ -4,6 +4,7 @@
 
 def pascal_triangle(n):
     """returns a list of integers representing the Pascal's triangle of n"""
+    list = []
     if n <= 0:
         return list
 
@@ -11,6 +12,7 @@ def pascal_triangle(n):
     for i in range(1, n):
         row = [1]
         prev_row = triangle[i-1]
+
         for row_index in range(1, n):
             current_row = [1]
             previous_row = triangle[row_index - 1]
