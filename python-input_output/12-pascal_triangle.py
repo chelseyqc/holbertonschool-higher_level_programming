@@ -9,18 +9,14 @@ def pascal_triangle(n):
         return list
 
     triangle = [[1]]
-    for i in range(1, n):
-        row = [1]
-        prev_row = triangle[i-1]
+    for row_index in range(1, n):
+        current_row = [1]
+        previous_row = triangle[row_index - 1]
 
-        for row_index in range(1, n):
-            current_row = [1]
-            previous_row = triangle[row_index - 1]
+        for element_index in range(1, row_index):
+            current_row.append(previous_row[element_index - 1]
+                                + previous_row[element_index])
+        current_row.append(1)
 
-            for element_index in range(1, row_index):
-                current_row.append(previous_row[element_index - 1]
-                                   + previous_row[element_index])
-            current_row.append(1)
-
-            triangle.append(current_row)
-        return triangle
+        triangle.append(current_row)
+    return triangle
