@@ -89,8 +89,16 @@ class Rectangle(Base):
         """assigns an argument to each attribute"""
         if len(args) != 0:
             key = ["id", "width", "height", "x", "y"]
-            for i in range(lend(args)):
+            for i in range(len(args)):
                 setattr(self, key[i], args[i])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of the class"""
+        keys = ["id", "width", "height", "x", "y"]
+        rectangle_dict = {}
+        for key in keys:
+            rectangle_dict[key] = getattr(self, key)
+        return rectangle_dict
