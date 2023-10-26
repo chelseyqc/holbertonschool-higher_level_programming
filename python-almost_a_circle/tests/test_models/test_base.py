@@ -12,6 +12,9 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b1.id, 1)
         b2 = Base()
         self.assertEqual(b2.id, 2)
+        a = Base()
+        b = Base()
+        self.assertEqual(b.id, a.id + 1)
 
     def test_id_input(self):
         """Test - id inputted as arg"""
