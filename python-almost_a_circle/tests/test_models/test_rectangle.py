@@ -96,5 +96,20 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), " #\n")
 
+    def test_rectangle_update(self):
+        """Test - update as expected"""
+        r = Rectangle(1, 2, 3, 4, 5)
+        r.update(89)
+        self.assertEqual(r.id, 89)
+        r2 = Rectangle(1, 2, 3, 4, 5)
+        r2.update(89, 1)
+        self.assertEqual(r2.id, 89, 1)
+        r3 = Rectangle(1, 2, 3, 4, 5)
+        r3.update(89, 1, 2)
+        self.assertEqual(r3.id, 89, 1)
+        r4 = Rectangle(1, 2, 3, 4, 5)
+        r4.update(89, 1, 2, 3)
+        self.assertEqual(r4.id, 89, 1)
+
 if __name__ == '__main__':
     unittest.main()
