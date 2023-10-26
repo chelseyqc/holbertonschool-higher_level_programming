@@ -63,3 +63,6 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(1, 0)
         with self.assertRaises(ValueError):
             r = Rectangle(0, 2)
+
+if __name__ == '__main__':
+    unittest.main()
