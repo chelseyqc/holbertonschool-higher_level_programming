@@ -38,6 +38,11 @@ class TestBase(unittest.TestCase):
         input = []
         self.assertEqual(Base.to_json_string(input), "[]")
 
+    def test_base_to_json_string_type(self):
+        """Test - to_json_string makes the correct type"""
+        input = Base.to_json_string([{'id': 10}])
+        self.assertEqual(type(input).__name__, "str")
+
     def test_from_json_string(self):
         """Test - from_json_string converts correctly"""
         input = "[{\"id\": 89}]"
