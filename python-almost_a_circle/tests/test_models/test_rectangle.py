@@ -69,5 +69,32 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(str(r), "[Rectangle] (5) 3/4 - 1/2")
 
+    def test_rectangle_display_missing(self):
+        """Test - display as expected without x or y"""
+        output = StringIO()
+        sys.stdout = output
+        r = Rectangle(1, 1)
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "#\n")
+
+    def test_rectangle_display_x_y(self):
+        """Test - display as expected with x and y"""
+        output = StringIO()
+        sys.stdout = output
+        r = Rectangle(1, 1, 1, 1)
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "\n #\n")
+
+    def test_rectangle_display_x(self):
+        """Test - display as expected with x and no y"""
+        output = StringIO()
+        sys.stdout = output
+        r = Rectangle(1, 1, 1)
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), " #\n")
+
 if __name__ == '__main__':
     unittest.main()
