@@ -56,3 +56,10 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(1, 2, -3)
         with self.assertRaises(ValueError):
             r = Rectangle(1, 2, 3, -4)
+
+    def test_rectangle_zero(self):
+        """Test - an arg is zero"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 0)
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 2)
