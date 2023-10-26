@@ -13,6 +13,8 @@ class TestBase(unittest.TestCase):
         b2 = Base()
         self.assertEqual(b2.id, 2)
         a = Base()
+        x = a.id > 0
+        self.assertEqual(x, True)
         b = Base()
         self.assertEqual(b.id, a.id + 1)
 
