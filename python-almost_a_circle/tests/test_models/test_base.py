@@ -33,5 +33,22 @@ class TestBase(unittest.TestCase):
         input = []
         self.assertEqual(Base.to_json_string(input), "[]")
 
+    def test_from_json_string(self):
+        """Test - from_json_string converts correctly"""
+        input = "[{\"id\": 89}]"
+        expected = [{"id": 89}]
+        self.assertEqual(Base.from_json_string(input), expected)
+
+    def test_from_json_string_none(self):
+        """Test - from_json_string is None"""
+        input = None
+        expected = []
+        self.assertEqual(Base.from_json_string(input), expected)
+
+    def test_from_json_string_empty(self):
+        """Test - from_json_string is empty"""
+        input = "[]"
+        self.assertEqual(Base.from_json_string(input), [])
+
 if __name__ == '__main__':
     unittest.main()
