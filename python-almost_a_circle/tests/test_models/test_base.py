@@ -6,11 +6,14 @@ from models.base import Base
 class TestBase(unittest.TestCase):
     """Base unit tests"""
 
-    def test_baseid(self):
-        """Test - if id is not None"""
+    def test_id(self):
+        """Test - generated id"""
         b1 = Base()
         self.assertEqual(b1.id, 1)
         b2 = Base()
         self.assertEqual(b2.id, 2)
-        b4 = Base(12)
-        self.assertEqual(b4.id, 12)
+
+    def test_id_input(self):
+        """Test - id inputted as arg"""
+        b3 = Base(12)
+        self.assertEqual(b3.id, 12)
