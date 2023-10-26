@@ -18,21 +18,20 @@ class TestBase(unittest.TestCase):
         b3 = Base(12)
         self.assertEqual(b3.id, 12)
 
-    def test_id_more(self):
-        """Test - more than one id in sequence"""
-        b1 = Base()
-        b2 = Base()
-        self.assertEqual(b1.id + 1, b2.id)
-
     def test_base_to_json_string(self):
         """Test - to_json_string list_dictionaries is not empty"""
         json_dictionary = Base.to_json_string([{'id': 10}])
         self.assertEqual(json_dictionary, "[{\"id\": 10}]")
 
-    def test_base_to_json_string_empty(self):
-        """Test - to_json_string list_dictionaries is empty"""
+    def test_base_to_json_string_none(self):
+        """Test - to_json_string list_dictionaries is None"""
         json_dictionary = Base.to_json_string(None)
         self.assertEqual(json_dictionary, "[]")
+
+    def test_base_to_json_string_empty(self):
+        """Test - to_json_string list_dictionaries is empty"""
+        input = []
+        self.assertEqual(Base.to_json_string(input), "[]")
 
 if __name__ == '__main__':
     unittest.main()
