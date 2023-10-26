@@ -2,6 +2,7 @@
 """Rectangle module unit tests"""
 import unittest
 import sys
+from io import StringIO
 from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
@@ -34,6 +35,13 @@ class TestRectangle(unittest.TestCase):
         expect = 2
         self.assertEqual(r.area(), expect)
 
-    def test_rectangle_display(self):
-        """Test - Rectangle printed"""
-
+    def test_rectangle_string(self):
+        """Test - an arg is a string"""
+        with self.assertRaises(TypeError):
+            r = Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, "2")
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, 2, "3")
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, 2, 3, "4")
