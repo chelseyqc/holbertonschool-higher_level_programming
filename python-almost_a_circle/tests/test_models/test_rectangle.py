@@ -45,3 +45,14 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(1, 2, "3")
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, 3, "4")
+
+    def test_rectangle_neg(self):
+        """Test - an arg is neg"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, 3, -4)
