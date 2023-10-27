@@ -111,5 +111,20 @@ class TestRectangle(unittest.TestCase):
         r4.update(89, 1, 2, 3)
         self.assertEqual(r4.id, 89, 1)
 
+    def test_rectangle_create(self):
+        r = Rectangle.create(**{'id': 89})
+        self.assertEqual(r.id, 89)
+        r2 = Rectangle.create(**{'id': 89, 'width': 1})
+        self.assertEqual(r2.id, 89)
+        r3 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(r3.id, 89)
+        r4 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual(r4.id, 89)
+        r5 = Rectangle.create(**{
+            'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4
+        })
+        self.assertEqual(r5.id, 89)
+
+
 if __name__ == '__main__':
     unittest.main()
