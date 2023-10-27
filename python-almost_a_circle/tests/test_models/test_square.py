@@ -114,6 +114,7 @@ class TestSquare(unittest.TestCase):
             s = file.read()
         self.assertEqual(
             s, '[{"id": 44, "x": 2, "size": 1, "y": 0}]')
+        os.remove("Square.json")
 
     def test_square_save_to_file_empty(self):
         """Test - saves empty square to file"""
@@ -121,6 +122,7 @@ class TestSquare(unittest.TestCase):
         with open("Square.json", 'r', encoding="utf-8") as file:
             s = file.read()
         self.assertEqual(s, '[]')
+        os.remove("Square.json")
 
     def test_square_save_to_file_none(self):
         """Test - saves none square to file"""
@@ -128,6 +130,7 @@ class TestSquare(unittest.TestCase):
         with open("Square.json", 'r', encoding="utf-8") as file:
             s = file.read()
         self.assertEqual(s, '[]')
+        os.remove("Square.json")
 
     def test_rectangle_to_dictionary(self):
         """Test - square becomes dictionary"""
@@ -142,6 +145,6 @@ class TestSquare(unittest.TestCase):
         Square.save_to_file([s])
         output = Square.load_from_file()
         self.assertEqual(str(output[0]), '[Square] (4) 2/3 - 1')
-
+        os.remove("Square.json")
 if __name__ == '__main__':
     unittest.main()
