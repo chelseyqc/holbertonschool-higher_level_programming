@@ -111,6 +111,12 @@ class TestRectangle(unittest.TestCase):
         r4 = Rectangle(1, 2, 3, 4, 5)
         r4.update(89, 1, 2, 3)
         self.assertEqual(r4.id, 89, 1)
+        r5 = Rectangle(1, 2, 3, 4, 5)
+        r5.update(**{'id': 89})
+        self.assertEqual(r5.id, 89)
+        r6 = Rectangle(1, 2, 3, 4, 5)
+        r6.update(**{'id': 89, 'width': 1})
+        self.assertEqual(r6.width, 1)
 
     def test_rectangle_create(self):
         """Test - creates new instance of rectangle"""
