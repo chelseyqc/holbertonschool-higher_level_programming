@@ -148,6 +148,7 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", 'r', encoding="utf-8") as file:
             r = file.read()
         self.assertEqual(r, '[]')
+        os.remove("Rectangle.json")
 
     def test_rectangle_save_to_file_none(self):
         """Test - saves None rectangle to file"""
@@ -155,6 +156,7 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", 'r', encoding="utf-8") as file:
             r = file.read()
         self.assertEqual(r, '[]')
+        os.remove("Rectangle.json")
 
     def test_rectangle_to_dictionary(self):
         """Test - rectangle becomes dictionary"""
@@ -166,9 +168,11 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_load_from_file(self):
         """Test - rectangle loads file"""
         r = Rectangle(1, 2, 3, 4, 5)
-        Rectangle.save_to_file([r])
+        input = [r]
+        Rectangle.save_to_file(input)
         output = Rectangle.load_from_file()
         self.assertEqual(str(output[0]), '[Rectangle] (5) 3/4 - 1/2')
+        os.remove("Rectangle.json")
 
 if __name__ == '__main__':
     unittest.main()
