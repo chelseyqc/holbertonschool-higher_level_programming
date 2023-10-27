@@ -2,6 +2,7 @@
 """Rectangle module unit tests"""
 import unittest
 import sys
+import os
 from io import StringIO
 from models.rectangle import Rectangle
 
@@ -112,6 +113,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r4.id, 89, 1)
 
     def test_rectangle_create(self):
+        """Test - creates new instance of rectangle"""
         r = Rectangle.create(**{'id': 89})
         self.assertEqual(r.id, 89)
         r2 = Rectangle.create(**{'id': 89, 'width': 1})
@@ -125,6 +127,28 @@ class TestRectangle(unittest.TestCase):
         })
         self.assertEqual(r5.id, 89)
 
+    def test_rectangle_save_to_file(self):
+        """Test - saves rectangle to file"""
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        with open("Rectangle.json", 'r', encoding="utf-8") as file:
+            r = file.read()
+        self.assertEqual(
+            r, '[{"id": 21, "width": 1, "height": 2, "x": 0, "y": 0}]')
+        os.remove("Rectangle.json")
+
+    def test_rectangle_save_to_file_empty(self):
+        """Test - saves empty rectangle to file"""
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", 'r', encoding="utf-8") as file:
+            r = file.read()
+        self.assertEqual(r, '[]')
+
+    def test_rectangle_save_to_file_none(self):
+        """Test - saves None rectangle to file"""
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", 'r', encoding="utf-8") as file:
+            r = file.read()
+        self.assertEqual(r, '[]')
 
 if __name__ == '__main__':
     unittest.main()
