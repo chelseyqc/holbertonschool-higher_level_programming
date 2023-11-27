@@ -10,8 +10,8 @@ if __name__ == "__main__":
     # create cursor to exec query
     cursor = db.cursor()
     # execute query
-    cursor.execute("SELECT * FROM states"
-                   "WHERE BINARY name LIKE 'N%' ORDER BY id;")
+    cursor.execute("SELECT * FROM states \
+                   WHERE BINARY name LIKE 'N%' ORDER BY id;")
     # fetch rows returned by query
     rows = cursor.fetchall()
     # iterate and print rows
