@@ -1,4 +1,4 @@
-let header = document.querySelector('header');
+let red_header = document.querySelector('header');
 red_header.onclick = changeColour;
 
 function changeColour() {
